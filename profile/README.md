@@ -42,6 +42,25 @@ O **VOLTA** conecta empresas que geram resíduos industriais a **cooperativas de
 
 ## 🧩 Como funciona
 
+### Fluxo 1° Ano
+
+```mermaid
+flowchart LR
+subgraph Web["Landing Page (1º ano)"]
+        L[🌐 Landing Page<br/>JSP]
+        AD[🔐 Área Admin]
+        S[☕ Back-end<br/>Servlet + JDBC + JSP]
+    end
+
+    DB1[(🗄️ Banco 1º ano<br/>Relacional)]
+
+    L -.->|acesso restrito| AD
+    AD -->|CRUD| S
+    S -->|JDBC| DB1
+```
+
+### Fluxo 2° Ano
+
 ```mermaid
 flowchart LR
     A[📱 Mobile]
@@ -76,6 +95,8 @@ flowchart LR
 - **Aplicativo mobile** — o colaborador tira a foto e acompanha suas ocorrências.
 - **API** — o "cérebro": recebe os dados, conversa com a IA e organiza as recomendações.
 - **Banco de dados** — tudo armazenado com segurança e histórico.
+- **Landing page** — a vitrine pública do projeto, desenvolvida pelo 1º ano. É isolada do restante do fluxo: não usa as APIs e tem back-end próprio em **Servlet, JDBC e JSP**.
+- **Área Admin** *(em desenvolvimento)* — painel com CRUD completo que se conecta direto ao **Banco 1º ano** (relacional, separado do banco da API principal).
 
 Tudo versionado no GitHub e containerizado, pronto para subir na nuvem.
 
