@@ -1,93 +1,228 @@
-# VOLTA
+<div align="center">
 
-Uma solução para ajudar empresas a descartar seus resíduos industriais de forma mais simples, rastreável e inteligente.
+<!-- <img src="./assets/banner.png" alt="VOLTA — Resíduo industrial com destino certo" width="100%"/>
 
----
+<br/>
 
-## A ideia
+<img src="./assets/mascote.png" alt="Mascote do VOLTA" width="180"/> -->
 
-Muitas empresas ainda têm dificuldade para descartar corretamente os resíduos gerados em suas operações. Esse processo hoje costuma ser manual, demorado e desorganizado: WhatsApp, planilhas, e-mails e ligações para tentar encontrar alguém que aceite o material.
+<img src="./assets/volta.svg">
 
-O **VOLTA** nasce para resolver esse problema de um jeito simples:
+### *"Tira uma foto. O VOLTA cuida do resto."*
 
-1. O colaborador da empresa **tira uma foto** do resíduo direto pelo celular.
-2. Essa foto gera automaticamente uma **ocorrência** dentro do sistema.
-3. Uma **Inteligência Artificial analisa a imagem** e entende que tipo de resíduo é aquele.
-4. Com base nessa análise, o VOLTA **indica as melhores cooperativas** de reciclagem para fazer o descarte — considerando o tipo de material, a localização e outros critérios.
+![Status](https://img.shields.io/badge/status-em%20desenvolvimento-2ED3A0?style=for-the-badge)
+![Repos](https://img.shields.io/badge/repositórios-12-0B3D2E?style=for-the-badge&logo=github&logoColor=white)
+![Sustentabilidade](https://img.shields.io/badge/♻️-economia%20circular-14805E?style=for-the-badge)
 
-Ou seja: menos burocracia para a empresa, mais destino correto para o resíduo, e mais oportunidade de trabalho para as cooperativas de reciclagem.
+[A ideia](#-a-ideia) •
+[Como funciona](#-como-funciona) •
+[Tecnologias](#-tecnologias) •
+[Equipe](#-equipe) •
+[Repositórios](#-repositórios)
 
-## Objetivo
-
-O objetivo do VOLTA é conectar empresas que geram resíduos industriais a cooperativas de reciclagem de forma prática e inteligente, substituindo processos manuais por um fluxo digital simples: **foto → ocorrência → análise por IA → recomendação de cooperativas**.
-
-## Como o sistema é organizado
-
-De forma bem resumida, o sistema é dividido em três partes que conversam entre si:
-
-- **Aplicativo mobile** — onde o usuário tira a foto e acompanha suas ocorrências.
-- **API** — o "cérebro" do sistema, que recebe as informações do aplicativo, conversa com a Inteligência Artificial e organiza as recomendações de cooperativas.
-- **Banco de dados** — onde tudo fica armazenado com segurança e histórico.
-
-Todo o projeto é versionado no GitHub e containerizado, o que facilita o trabalho em equipe e a colocação do sistema no ar.
+</div>
 
 ---
 
-## Equipe
+## 💡 A ideia
 
-O projeto é desenvolvido por dois grupos: os alunos do **1º ano**, criadores e donos originais da ideia, e os alunos do **2º ano**, responsáveis por desenvolver a solução.
+Muitas empresas ainda têm dificuldade para descartar corretamente os resíduos gerados em suas operações. Hoje esse processo costuma ser **manual, demorado e desorganizado**: WhatsApp, planilhas, e-mails e ligações para tentar encontrar alguém que aceite o material.
 
-### 1º Ano — Idealizadores
+O **VOLTA** conecta empresas que geram resíduos industriais a **cooperativas de reciclagem**, trocando a burocracia por um fluxo digital simples:
 
-| Integrante | Frente | Ferramentas |
-|---|---|---|
-| Miguel Lapa | Banco de Dados | SQL |
-| Lucca | Desenvolvimento I | HTML e CSS |
-| Gustavo Sousa | Lógica de Programação | Java |
-| Gustavo Sousa | Programação Orientada a Objetos | Java, JDBC, Spring |
-| Gustavo Sousa | Sistemas Operacionais | Excel, REGEX, Git |
-| Gustavo Sousa | Introdução à Inteligência Artificial | — |
-| Gustavo Azenha | Experiência do Usuário (UX) | Figma |
+<div align="center">
 
-### 2º Ano — Desenvolvedores
+| 📸 | ➜ | 📋 | ➜ | 🤖 | ➜ | ♻️ |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Foto** do resíduo | | **Ocorrência** criada | | **IA** identifica o material | | **Cooperativas** recomendadas |
 
-| Integrante | Frente | Ferramentas |
-|---|---|---|
-| Lucas Fabiano | Modelagem de Dados | SQL |
-| Lucas Fabiano | Banco de Dados II | MongoDB, Redis, Neo4j |
-| Gabriel Peotta | Business Intelligence | Python, Databricks |
-| Gabriel Peotta | Inteligência Artificial | Python, LangChain/LangGraph, MongoDB, FastAPI |
-| Enzo Herrera | Desenvolvimento II | Spring Boot, Maven, Swagger, JWT |
-| Enzo Herrera | DevOps Ágeis | Docker, Docker Compose, Cloud, Kubernetes |
-| Breno / Carlos | Aplicações Dinâmicas | JavaScript, TypeScript, React |
-| Carlos Amaral | Aplicativo Móvel | Android nativo, Java, XML, Gradle *(inicialmente previsto em Kotlin/Firebase)* |
-| Davi Liu | Engenharia de Software | Diagramas e metodologia |
-| Breno | UX | Figma |
+</div>
+
+> Menos burocracia para a empresa, mais destino correto para o resíduo e mais oportunidade de trabalho para as cooperativas.
+
+## 🧩 Como funciona
+
+### Fluxo 1° Ano
+
+```mermaid
+flowchart LR
+subgraph Web["Landing Page (1º ano)"]
+        L[🌐 Landing Page<br/>JSP]
+        AD[🔐 Área Admin]
+        S[☕ Back-end<br/>Servlet + JDBC + JSP]
+    end
+
+    DB1[(🗄️ Banco 1º ano<br/>Relacional)]
+
+    L -.->|acesso restrito| AD
+    AD -->|CRUD| S
+    S -->|JDBC| DB1
+```
+
+### Fluxo 2° Ano
+
+```mermaid
+flowchart LR
+    A[📱 Mobile]
+
+    subgraph APIs["APIs"]
+        B[⚙️ API Principal<br/>Spring Boot]
+        C[🤖 API Chatbot<br/>FastAPI]
+        I[💬 API de Interação<br/>Conversacional]
+    end
+
+    subgraph Dados["Dados"]
+        D[(🗄️ Banco Relacional)]
+        R[(🏆 Redis<br/>Ranking)]
+        M[(💬 MongoDB<br/>Conversas)]
+    end
+
+    W[🖥️ Website<br/>do Gerente]
+
+    A -->|CRUD| B
+    B --> D
+    B -->|score| R
+
+    A -->|foto + dados| C
+    C -->|recomendação| A
+    C --> M
+
+    A -->|interação| I
+    I --> M
+    I --> W
+```
+
+- **Aplicativo mobile** — o colaborador tira a foto e acompanha suas ocorrências.
+- **API** — o "cérebro": recebe os dados, conversa com a IA e organiza as recomendações.
+- **Banco de dados** — tudo armazenado com segurança e histórico.
+- **Landing page** — a vitrine pública do projeto, desenvolvida pelo 1º ano. É isolada do restante do fluxo: não usa as APIs e tem back-end próprio em **Servlet, JDBC e JSP**.
+- **Área Admin** *(em desenvolvimento)* — painel com CRUD completo que se conecta direto ao **Banco 1º ano** (relacional, separado do banco da API principal).
+
+Tudo versionado no GitHub e containerizado, pronto para subir na nuvem.
+
+## 🛠️ Tecnologias
+
+<div align="center">
+
+**Back-end**
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![Maven](https://img.shields.io/badge/Maven-007ACC?style=for-the-badge&logo=apachemaven&logoColor=white)
+![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+
+**Inteligência Artificial**
+
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langgraph&logoColor=white)
+![Qdrant](https://img.shields.io/badge/Qdrant-DC244C?style=for-the-badge&logo=qdrant&logoColor=white)
+
+
+**Dados** 
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
+![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+
+**Bancos de dados**
+
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
+![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white)
+
+**Front-end**
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+**Mobile**
+
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![Glide](https://img.shields.io/badge/Glide-18B6F2?style=for-the-badge&logo=glide&logoColor=white)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)
+
+**Infraestrutura**
+
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+**Design**
+
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![Maze](https://img.shields.io/badge/Maze-000000?style=for-the-badge&logo=maze&logoColor=white)
+
+</div>
+
+## 👥 Equipe
+
+O projeto nasce de dois grupos: o **1º ano**, criadores e donos originais da ideia, e o **2º ano**, responsável por desenvolver a solução.
+
+### 🌱 1º Ano — Idealizadores
+
+<table align="center">
+  <tr>
+    <td align="center"><a href="#"><img src="./assets/team/miguel-lapa.png" width="110" alt="Miguel Lapa"/><br/><b>Miguel Lapa</b></a><br/><sub>Banco de Dados</sub><br/><img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/></td>
+    <td align="center"><a href="#"><img src="./assets/team/lucca.png" width="110" alt="Lucca"/><br/><b>Lucca</b></a><br/><sub>Desenvolvimento I</sub><br/><img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/></td>
+    <td align="center"><a href="#"><img src="./assets/team/gustavo-souza.png" width="110" alt="Gustavo Souza"/><br/><b>Gustavo Souza</b></a><br/><sub>Lógica, POO, SO e IA</sub><br/><img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white"/><img src="https://img.shields.io/badge/Gemini-8E75B2?style=flat-squared&logo=googlegemini&logoColor=white"></td>
+    <td align="center"><a href="#"><img src="./assets/team/gustavo-azenha.png" width="110" alt="Gustavo Azenha"/><br/><b>Gustavo Azenha</b></a><br/><sub>Experiência do Usuário</sub><br/><img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></td>
+  </tr>
+</table>
+
+### 🚀 2º Ano — Desenvolvedores
+
+<table align="center">
+  <tr>
+    <td align="center">
+    <a href="#"><img src="./assets/team/lucas-fabiano.jpg" width="110" alt="Lucas Fabiano"/><br/><b>Lucas Fabiano</b></a><br/><sub>Modelagem & Banco de Dados II</sub><br/> <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white"/></td>
+    <td align="center"><a href="#"><img src="./assets/team/gabriel-peotta.jpeg" width="110" alt="Gabriel Peotta"/><br/><b>Gabriel Peotta</b></a><br/><sub>IA & Business Intelligence</sub><br/><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/> <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white"/></td>
+    <td align="center"><a href="#"><img src="./assets/team/enzo-herrera.jpg" width="110" alt="Enzo Herrera"/><br/><b>Enzo Herrera</b></a><br/><sub>Desenvolvimento II & DevOps</sub><br/><img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white"/></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="#"><img src="./assets/team/breno.jpeg" width="110" alt="Breno"/><br/><b>Breno</b></a><br/><sub>Aplicações Dinâmicas & UX</sub><br/><img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></td>
+    <td align="center"><a href="#"><img src="./assets/team/carlos-amaral.jpeg" width="110" alt="Carlos Amaral"/><br/><b>Carlos Amaral</b></a><br/><sub>Mobile</sub><br/><img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white"/> <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/></td>
+    <td align="center"><a href="#"><img src="./assets/team/davi-liu.jpeg" width="110" alt="Davi Liu"/><br/><b>Davi Liu</b></a><br/><sub>Eng. de Software & UX</sub><br/><img src="https://img.shields.io/badge/UML-0B3D2E?style=flat-square"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/><img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square &logo=redis&logoColor=white"></td>
+  </tr>
+</table>
+
+## 📦 Repositórios
+
+Todo o código vive na organização **[app-volta](https://github.com/app-volta)**:
+
+| | Repositório | O que contém |
+|:---:|---|---|
+| 📱 | [volta-mobile](https://github.com/app-volta/volta-mobile) | Aplicativo mobile (Android nativo) |
+| ⚙️ | [volta-api](https://github.com/app-volta/volta-api) | API principal do sistema (Spring Boot) |
+| 🏆 | [volta-api-redis](https://github.com/app-volta/volta-api-redis) | API para ranking dinâmico (Redis) |
+| 💬 | [volta-api-mongo](https://github.com/app-volta/volta-api-mongo) | API para interação conversacional (MongoDB, FastAPI) |
+| 🗄️ | [volta-database](https://github.com/app-volta/volta-database) | Modelagem e banco de dados relacional (SQL) |
+| 🤖 | [volta-chatbot](https://github.com/app-volta/volta-chatbot) | Módulo de Inteligência Artificial (FastAPI) |
+| 📊 | [volta-business-inteligence](https://github.com/app-volta/volta-business-inteligence) | Análises e dashboards de BI |
+| 🌐 | [volta-landing-page](https://github.com/app-volta/volta-landing-page) | Página/aplicação web do projeto |
+| 🖥️ | [volta-website-dad](https://github.com/app-volta/volta-website-dad) | Website para uso do gerente |
+| 🐳 | [volta-devops](https://github.com/app-volta/volta-devops) | Infraestrutura, containers e deploy |
+| 📚 | [volta-docs](https://github.com/app-volta/volta-docs) | Documentação, diagramas e metodologia |
+| 🔧 | [.github](https://github.com/app-volta/.github) | Configurações padrão da organização |
+
+> Cada repositório é mantido pela frente correspondente da equipe.
 
 ---
 
-## Repositórios
+<div align="center">
 
-Todo o código do projeto está organizado na organização **[app-volta](https://github.com/app-volta)** no GitHub, dividido em 11 repositórios:
+<img src="./assets/mascote.png" alt="Mascote do VOLTA" width="70"/>
 
-| Repositório | O que contém |
-|---|---|
-| [volta-mobile](https://github.com/app-volta/volta-mobile) | Aplicativo mobile (Android nativo). |
-| [volta-api](https://github.com/app-volta/volta-api) | API principal do sistema (Spring Boot). |
-| [volta-api-nosql](https://github.com/app-volta/volta-api-nosql) | Camada de dados NoSQL (MongoDB, Redis, Neo4j). |
-| [volta-database](https://github.com/app-volta/volta-database) | Modelagem e banco de dados relacional (SQL). |
-| [volta-chatbot](https://github.com/app-volta/volta-chatbot) | Módulo de Inteligência Artificial (Python). |
-| [volta-business-inteligence](https://github.com/app-volta/volta-business-inteligence) | Análises e dashboards de Business Intelligence. |
-| [volta-landing-page](https://github.com/app-volta/volta-landing-page) | Página/aplicação web do projeto. |
-| [volta-devops](https://github.com/app-volta/volta-devops) | Infraestrutura, containers e automações de deploy. |
-| [volta-docs](https://github.com/app-volta/volta-docs) | Documentação, diagramas e metodologia do projeto. |
-| [volta-website-dad](https://github.com/app-volta/volta-website-dad) | Website institucional do projeto. |
-| [.github](https://github.com/app-volta/.github) | Configurações e arquivos padrão da organização. |
+**Quer entender a fundo?** Arquitetura, funcionalidades e regras de negócio estão em [volta-docs](https://github.com/app-volta/volta-docs).
 
-> Cada repositório é mantido pela frente correspondente da equipe, seguindo a divisão apresentada acima.
+<sub>Feito com 💚 pela equipe VOLTA — porque todo resíduo merece uma segunda volta. ♻️</sub>
 
----
-
-### Sobre este documento
-
-Este README foi escrito para apresentar o VOLTA de forma simples e acessível — a ideia por trás do projeto, o objetivo, quem faz parte da equipe e onde encontrar cada parte do código. Para detalhes técnicos de arquitetura, funcionalidades e regras de negócio, consulte a documentação em [volta-docs](https://github.com/app-volta/volta-docs).
+</div>

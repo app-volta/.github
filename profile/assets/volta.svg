@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1615 492" width="1615" height="492">
+  <rect width="1615" height="492" rx="20" fill="#1EA566"/>
+
+  <defs>
+    <!-- trim path do "O": MESMO progresso, tempos e easing do mascote -->
+    <mask id="draw" maskUnits="userSpaceOnUse" x="0" y="0" width="1615" height="492">
+      <path d="M700,170 C770,230 775,330 690,375 C610,415 500,385 498,315 C497,255 560,215 620,225 C675,233 705,272 665,295 C635,312 598,305 588,285"
+            fill="none" stroke="#fff" stroke-width="95" stroke-linecap="round" pathLength="1"
+            stroke-dasharray="1 2" stroke-dashoffset="1">
+        <animate attributeName="stroke-dashoffset" dur="5s" repeatCount="indefinite"
+          values="1;1;0;0" keyTimes="0;.28;.6;1"
+          calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      </path>
+    </mask>
+  </defs>
+
+  <g>
+    <!-- fade out final e reinício -->
+    <animate attributeName="opacity" dur="5s" repeatCount="indefinite"
+      values="1;1;0;0" keyTimes="0;.94;.99;1"/>
+
+    <!-- 1) Espiral do "O" (atrás do mascote) -->
+    <g mask="url(#draw)">
+      <path fill="#fff" d="M722,156 Q735,165 757,190 Q765,205 770,210 Q782,235 779,285 Q770,340 720,380 Q670,415 600,415 Q520,413 490,350 Q485,330 488,312 Q495,265 540,232 Q580,205 620,212 Q670,215 685,245 Q688,260 680,268 Q650,290 618,305 Q608,308 603,300 Q600,288 610,272 Q610,265 603,263 Q555,262 552,300 Q553,335 585,350 Q595,357 625,357 Q645,357 660,350 Q715,328 720,275 Q722,250 712,228 Q700,205 676,190 Q676,184 722,156 Z"/>
+    </g>
+
+    <!-- 2) MASCOTE -->
+    <!-- A: ida do centro até o início da espiral (1,0 → 1,4 s) -->
+    <g>
+      <animateTransform attributeName="transform" type="translate" dur="5s" repeatCount="indefinite"
+        values="107 76;107 76;0 0;0 0" keyTimes="0;.2;.28;1"
+        calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      <!-- B: percorre a espiral, sincronizado com o traço (1,4 → 3,0 s) -->
+      <g>
+        <animateMotion dur="5s" repeatCount="indefinite" rotate="auto"
+          path="M700,170 C770,230 775,330 690,375 C610,415 500,385 498,315 C497,255 560,215 620,225 C675,233 705,272 665,295 C635,312 598,305 588,285"
+          keyPoints="0;0;1;1" keyTimes="0;.28;.6;1"
+          calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+        <animate attributeName="opacity" dur="5s" repeatCount="indefinite"
+          values="0;1;1;0;0" keyTimes="0;.03;.595;.6;1"/>
+        <!-- R: pé (rotação 0) na entrada; depois ponta acompanha a tangente (+90° de correção) -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate" dur="5s" repeatCount="indefinite"
+            values="-40.6;-40.6;90;90" keyTimes="0;.2;.28;1"
+            calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+          <!-- S: encolhe; chega a ~0 nos últimos ~15% do caminho -->
+          <g>
+            <animateTransform attributeName="transform" type="scale" dur="5s" repeatCount="indefinite"
+              values=".5;.5;.36;.3;0;0" keyTimes="0;.28;.45;.52;.6;1"
+              calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;.4 0 .2 1;.5 0 .8 1;0 0 1 1"/>
+            <!-- K: curva do corpo (elástico) -->
+            <g>
+              <animateTransform attributeName="transform" type="skewX" dur="5s" repeatCount="indefinite"
+                values="0;0;8;-8;6;-4;0;0" keyTimes="0;.28;.34;.4;.46;.52;.58;1"
+                calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;.4 0 .2 1;.4 0 .2 1;.4 0 .2 1;.4 0 .2 1;0 0 1 1"/>
+              <!-- E: estica ao longo do eixo (máx. 1,08) -->
+              <g>
+                <animateTransform attributeName="transform" type="scale" dur="5s" repeatCount="indefinite"
+                  values="1 1;1 1;.96 1.08;1.04 .95;.97 1.05;1 1;1 1" keyTimes="0;.28;.35;.43;.5;.58;1"
+                  calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;.4 0 .2 1;.4 0 .2 1;.4 0 .2 1;0 0 1 1"/>
+                <!-- J: pulinho com overshoot -->
+                <g>
+                  <animateTransform attributeName="transform" type="translate" dur="5s" repeatCount="indefinite"
+                    values="0 0;0 0;0 -50;0 0;0 8;0 0;0 0" keyTimes="0;.02;.06;.10;.12;.14;1"
+                    calcMode="spline" keySplines="0 0 1 1;.2 0 .4 1;.6 0 .8 1;.2 0 .4 1;.4 0 .2 1;0 0 1 1"/>
+                  <!-- centro do corpo na origem -->
+                  <g transform="translate(0,60)">
+                    <!-- bracinhos e perninhas -->
+                    <g fill="#5BA853">
+                      <animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.2;.38;1"/>
+                      <rect x="-35" y="-13" width="70" height="26" rx="6" transform="translate(-155,76) rotate(20)"/>
+                      <rect x="-11" y="-35" width="22" height="70" rx="5" transform="translate(-65,254) rotate(20)"/>
+                      <rect x="-11" y="-35" width="22" height="70" rx="5" transform="translate(53,254) rotate(-8)"/>
+                      <!-- braço direito separado: acena -->
+                      <g>
+                        <animateTransform attributeName="transform" type="rotate" dur="5s" repeatCount="indefinite"
+                          values="0 115 82;0 115 82;-40 115 82;8 115 82;-34 115 82;4 115 82;-24 115 82;0 115 82;0 115 82"
+                          keyTimes="0;.1;.123;.14;.157;.174;.19;.2;1"
+                          calcMode="spline" keySplines="0 0 1 1;.3 0 .3 1;.3 0 .3 1;.3 0 .3 1;.3 0 .3 1;.3 0 .3 1;.3 0 .3 1;0 0 1 1"/>
+                        <rect x="-35" y="-13" width="70" height="26" rx="6" transform="translate(145,74) rotate(-20)"/>
+                      </g>
+                    </g>
+                    <!-- corpo: verde claro -> branco, contorno some -->
+                    <path d="M0,-306 L180,-70 Q186,-62 176,-58 L87,-58 L87,180 Q87,190 77,190 L-77,190 Q-87,190 -87,180 L-87,-58 L-176,-58 Q-186,-62 -180,-70 Z"
+                          fill="#8FCC84" stroke="#5BA853" stroke-width="14" stroke-linejoin="round">
+                      <animate attributeName="fill" dur="5s" repeatCount="indefinite"
+                        values="#8FCC84;#8FCC84;#FFFFFF;#FFFFFF" keyTimes="0;.2;.56;1"/>
+                      <animate attributeName="stroke" dur="5s" repeatCount="indefinite"
+                        values="#5BA853;#5BA853;#FFFFFF;#FFFFFF" keyTimes="0;.2;.56;1"/>
+                      <animate attributeName="stroke-width" dur="5s" repeatCount="indefinite"
+                        values="14;14;0;0" keyTimes="0;.2;.56;1"/>
+                    </path>
+                    <!-- carinha -->
+                    <g stroke="#0F1B33" stroke-width="9" stroke-linecap="round" fill="none">
+                      <animate attributeName="opacity" dur="5s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;.2;.34;1"/>
+                      <path d="M-30,76 V100 M30,76 V100"/>
+                      <path d="M-14,122 Q4,134 14,116"/>
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- 3) V + seta: começa em ~2,7 s (espiral ~90%), fade + deslize curto -->
+    <g opacity="0">
+      <animate attributeName="opacity" dur="5s" repeatCount="indefinite"
+        values="0;0;1;1" keyTimes="0;.54;.62;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      <animateTransform attributeName="transform" type="translate" dur="5s" repeatCount="indefinite"
+        values="30 0;30 0;0 0;0 0" keyTimes="0;.54;.62;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      <path fill="#fff" d="M193,150 Q193,144 230,144 H262 Q268,146 275,158 Q300,205 340,275 L355,305 Q365,290 385,252 Q415,205 440,175 Q510,115 595,110 Q605,110 605,98 V90 Q608,76 620,78 Q630,80 690,126 Q702,138 697,146 Q690,155 615,200 Q605,198 605,188 V183 Q600,170 585,170 Q540,175 515,192 Q480,215 455,250 L440,270 Q430,290 410,330 Q395,360 385,375 Q372,393 345,393 Q325,393 313,375 Q290,335 200,175 Q193,160 193,150 Z"/>
+    </g>
+
+    <!-- L -->
+    <g opacity="0">
+      <animate attributeName="opacity" dur="5s" repeatCount="indefinite"
+        values="0;0;1;1" keyTimes="0;.56;.66;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      <animateTransform attributeName="transform" type="translate" dur="5s" repeatCount="indefinite"
+        values="-40 0;-40 0;0 0;0 0" keyTimes="0;.56;.66;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      <path fill="#fff" d="M810,135 H872 Q880,135 880,143 V310 Q880,326 896,326 H975 Q992,326 992,343 L990,375 Q990,388 975,388 H820 Q803,388 803,382 V143 Q803,135 810,135 Z"/>
+    </g>
+
+    <!-- T -->
+    <g opacity="0">
+      <animate attributeName="opacity" dur="5s" repeatCount="indefinite"
+        values="0;0;1;1" keyTimes="0;.6;.7;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      <animateTransform attributeName="transform" type="translate" dur="5s" repeatCount="indefinite"
+        values="-40 0;-40 0;0 0;0 0" keyTimes="0;.6;.7;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      <path fill="#fff" d="M965,135 H1170 Q1178,135 1177,145 V185 Q1177,194 1167,194 H1115 Q1098,194 1098,211 V380 Q1098,388 1090,388 H1032 Q1022,388 1022,380 V211 Q1022,194 1005,194 H958 Q950,194 950,185 V152 Q950,135 965,135 Z"/>
+    </g>
+
+    <!-- A -->
+    <g opacity="0">
+      <animate attributeName="opacity" dur="5s" repeatCount="indefinite"
+        values="0;0;1;1" keyTimes="0;.64;.74;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      <animateTransform attributeName="transform" type="translate" dur="5s" repeatCount="indefinite"
+        values="-40 0;-40 0;0 0;0 0" keyTimes="0;.64;.74;1" calcMode="spline" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1"/>
+      <path fill="#fff" fill-rule="evenodd" d="M1240,132 H1315 Q1322,132 1328,145 L1395,310 Q1410,345 1422,386 H1345 Q1340,386 1335,370 Q1328,350 1318,340 H1228 Q1220,342 1215,355 L1203,386 H1128 Q1125,383 1130,372 Q1150,335 1160,300 L1215,180 Q1222,150 1240,132 Z M1275,208 Q1282,210 1298,262 Q1300,282 1283,282 H1253 Q1247,282 1250,270 Q1265,235 1275,208 Z"/>
+    </g>
+  </g>
+</svg>
