@@ -15,6 +15,7 @@
 ![Sustentabilidade](https://img.shields.io/badge/♻️-economia%20circular-14805E?style=for-the-badge)
 
 [A ideia](#-a-ideia) •
+[ODS 12](#-ods-12--consumo-e-produção-responsáveis) •
 [Como funciona](#-como-funciona) •
 [Tecnologias](#-tecnologias) •
 [Equipe](#-equipe) •
@@ -40,66 +41,79 @@ O **VOLTA** conecta empresas que geram resíduos industriais a **cooperativas de
 
 > Menos burocracia para a empresa, mais destino correto para o resíduo e mais oportunidade de trabalho para as cooperativas.
 
+### Por que o VOLTA existe
+
+No dia a dia de uma indústria, o resíduo é um problema que ninguém quer carregar: sobra de material, peça descartada, embalagem, sucata. Quem tem pouco tempo acaba deixando o material parado, descartando de forma inadequada ou aceitando a primeira solução que aparece. Do outro lado, existem cooperativas de reciclagem que precisam de matéria-prima e não sabem onde ela está.
+
+O VOLTA nasce para ser a **ponte entre esses dois lados**. O aplicativo foi pensado para ser tão simples que qualquer colaborador consiga usá-lo no meio da operação, sem treinamento: basta abrir o app e fotografar o resíduo.
+
+### O que o aplicativo faz por você
+
+- **Registra a ocorrência na hora:** a foto, o local e os dados da empresa viram um registro rastreável, no lugar de uma mensagem perdida em um grupo de WhatsApp.
+- **Identifica o material com IA:** a imagem é analisada para entender que tipo de resíduo é aquele, sem a empresa precisar classificar na mão.
+- **Indica para onde o resíduo deve ir:** as cooperativas são recomendadas conforme o tipo de material, a localização e outros critérios, e um ranking dinâmico ajuda a escolher a melhor opção.
+- **Mantém o histórico:** a empresa acompanha cada ocorrência e prova que deu um destino correto ao que gerou.
+- **Tira dúvidas pelo chat:** um assistente conversacional orienta o usuário durante o processo.
+
+O intuito final é duplo: **simplificar a vida de quem gera o resíduo** e **gerar trabalho e renda para quem recicla**, fechando o ciclo em que o que seria descartado volta para a cadeia produtiva.
+
+## 🌍 ODS 12 — Consumo e Produção Responsáveis
+
+<div align="center">
+
+![ODS 12](https://img.shields.io/badge/ODS%2012-Consumo%20e%20Produ%C3%A7%C3%A3o%20Respons%C3%A1veis-BF8B2E?style=for-the-badge)
+
+</div>
+
+O **Objetivo de Desenvolvimento Sustentável 12**, da Agenda 2030 da ONU, propõe assegurar padrões de produção e de consumo sustentáveis. Ele olha para o ciclo inteiro: usar melhor os recursos, gerar menos resíduos e dar um destino adequado ao que sobra.
+
+O VOLTA se conecta diretamente a esse objetivo, principalmente a três metas:
+
+| Meta | O que diz | Como o VOLTA contribui |
+|---|---|---|
+| **12.4** | Gestão ambientalmente adequada de resíduos, reduzindo sua liberação no ambiente | A IA identifica o tipo de resíduo e direciona para quem sabe tratá-lo corretamente |
+| **12.5** | Reduzir substancialmente a geração de resíduos por prevenção, redução, reciclagem e reuso | O resíduo industrial volta para a cadeia produtiva por meio das cooperativas de reciclagem |
+| **12.6** | Incentivar empresas a adotar práticas sustentáveis | O histórico rastreável de ocorrências ajuda a empresa a comprovar seu descarte correto |
+
+Na prática, o VOLTA reduz o descarte inadequado, aumenta o volume de material reciclado e fortalece as cooperativas, o que também reforça a economia circular e a inclusão produtiva.
+
 ## 🧩 Como funciona
 
-### Fluxo 1° Ano
 
 ```mermaid
 flowchart LR
-subgraph Web["Landing Page (1º ano)"]
-        L[🌐 Landing Page<br/>JSP]
-        AD[🔐 Área Admin]
-        S[☕ Back-end<br/>Servlet + JDBC + JSP]
+    subgraph Ano1["1º Ano"]
+        direction TB
+        L[Landing Page] --> AD[Área Admin]
+        AD -->|CRUD| S[Servlet + JDBC + JSP]
+        S --> DB1[(Banco 1º ano)]
     end
 
-    DB1[(🗄️ Banco 1º ano<br/>Relacional)]
+    subgraph Ano2["2º Ano"]
+        direction TB
+        A[Mobile]
+        D[(PostgreSQL<br/> NeonDB)]
+        B[API Principal<br/>Spring Boot]
+        C[API Chatbot<br/>FastAPI]
+        I[API Mongo<br/>Interação Conversacional]
+        R[API Redis<br/>Ranking Dinâmico]
+        M[(MongoDB <br/> Atlas)]
+        W[Website do Gerente]
 
-    L -.->|acesso restrito| AD
-    AD -->|CRUD| S
-    S -->|JDBC| DB1
+        B --> D
+        A -->|CRUD| B
+        A -->|foto + dados| C
+        A -->|chat| I
+        R -->|ranking| A
+        B -->|score| R
+        I --> M
+        I --> W
+        C --> M
+
+    end
+
+    DB1 <-->|RPA| D
 ```
-
-### Fluxo 2° Ano
-
-```mermaid
-flowchart LR
-    A[📱 Mobile]
-
-    subgraph APIs["APIs"]
-        B[⚙️ API Principal<br/>Spring Boot]
-        C[🤖 API Chatbot<br/>FastAPI]
-        I[💬 API de Interação<br/>Conversacional]
-    end
-
-    subgraph Dados["Dados"]
-        D[(🗄️ Banco Relacional)]
-        R[(🏆 Redis<br/>Ranking)]
-        M[(💬 MongoDB<br/>Conversas)]
-    end
-
-    W[🖥️ Website<br/>do Gerente]
-
-    A -->|CRUD| B
-    B --> D
-    B -->|score| R
-
-    A -->|foto + dados| C
-    C -->|recomendação| A
-    C --> M
-
-    A -->|interação| I
-    I --> M
-    I --> W
-```
-
-- **Aplicativo mobile** — o colaborador tira a foto e acompanha suas ocorrências.
-- **API** — o "cérebro": recebe os dados, conversa com a IA e organiza as recomendações.
-- **Banco de dados** — tudo armazenado com segurança e histórico.
-- **Landing page** — a vitrine pública do projeto, desenvolvida pelo 1º ano. É isolada do restante do fluxo: não usa as APIs e tem back-end próprio em **Servlet, JDBC e JSP**.
-- **Área Admin** *(em desenvolvimento)* — painel com CRUD completo que se conecta direto ao **Banco 1º ano** (relacional, separado do banco da API principal).
-
-Tudo versionado no GitHub e containerizado, pronto para subir na nuvem.
-
 ## 🛠️ Tecnologias
 
 <div align="center">
@@ -120,7 +134,7 @@ Tudo versionado no GitHub e containerizado, pronto para subir na nuvem.
 ![Qdrant](https://img.shields.io/badge/Qdrant-DC244C?style=for-the-badge&logo=qdrant&logoColor=white)
 
 
-**Dados** 
+**Ánalise de Dados** 
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
@@ -165,16 +179,14 @@ Tudo versionado no GitHub e containerizado, pronto para subir na nuvem.
 
 ## 👥 Equipe
 
-O projeto nasce de dois grupos: o **1º ano**, criadores e donos originais da ideia, e o **2º ano**, responsável por desenvolver a solução.
-
 ### 🌱 1º Ano — Idealizadores
 
 <table align="center">
   <tr>
-    <td align="center"><a href="#"><img src="./assets/team/miguel-lapa.png" width="110" alt="Miguel Lapa"/><br/><b>Miguel Lapa</b></a><br/><sub>Banco de Dados</sub><br/><img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/></td>
-    <td align="center"><a href="#"><img src="./assets/team/lucca.png" width="110" alt="Lucca"/><br/><b>Lucca</b></a><br/><sub>Desenvolvimento I</sub><br/><img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/></td>
-    <td align="center"><a href="#"><img src="./assets/team/gustavo-souza.png" width="110" alt="Gustavo Souza"/><br/><b>Gustavo Souza</b></a><br/><sub>Lógica, POO, SO e IA</sub><br/><img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white"/><img src="https://img.shields.io/badge/Gemini-8E75B2?style=flat-squared&logo=googlegemini&logoColor=white"></td>
-    <td align="center"><a href="#"><img src="./assets/team/gustavo-azenha.png" width="110" alt="Gustavo Azenha"/><br/><b>Gustavo Azenha</b></a><br/><sub>Experiência do Usuário</sub><br/><img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></td>
+    <td align="center"><a href="https://github.com/miguellapa25"><img src="./assets/team/miguel-lapa.png" width="110" alt="Miguel Lapa"/><br/><b>Miguel Lapa</b></a><br/><sub>Banco de Dados</sub><br/><img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/></td>
+    <td align="center"><a href="https://github.com/ldb2010"><img src="./assets/team/lucca.png" width="110" alt="Lucca"/><br/><b>Lucca</b></a><br/><sub>Desenvolvimento I</sub><br/><img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/></td>
+    <td align="center"><a href="https://github.com/Gustavo031210"><img src="./assets/team/gustavo-souza.png" width="110" alt="Gustavo Souza"/><br/><b>Gustavo Souza</b></a><br/><sub>Lógica, POO, SO e IA</sub><br/><img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white"/><img src="https://img.shields.io/badge/Gemini-8E75B2?style=flat-squared&logo=googlegemini&logoColor=white"></td>
+    <td align="center"><a href="https://github.com/GustavoA-byte"><img src="./assets/team/gustavo-azenha.png" width="110" alt="Gustavo Azenha"/><br/><b>Gustavo Azenha</b></a><br/><sub>Experiência do Usuário</sub><br/><img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></td>
   </tr>
 </table>
 
@@ -183,20 +195,18 @@ O projeto nasce de dois grupos: o **1º ano**, criadores e donos originais da id
 <table align="center">
   <tr>
     <td align="center">
-    <a href="#"><img src="./assets/team/lucas-fabiano.jpg" width="110" alt="Lucas Fabiano"/><br/><b>Lucas Fabiano</b></a><br/><sub>Modelagem & Banco de Dados II</sub><br/> <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white"/></td>
-    <td align="center"><a href="#"><img src="./assets/team/gabriel-peotta.jpeg" width="110" alt="Gabriel Peotta"/><br/><b>Gabriel Peotta</b></a><br/><sub>IA & Business Intelligence</sub><br/><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/> <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white"/></td>
-    <td align="center"><a href="#"><img src="./assets/team/enzo-herrera.jpg" width="110" alt="Enzo Herrera"/><br/><b>Enzo Herrera</b></a><br/><sub>Desenvolvimento II & DevOps</sub><br/><img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white"/></td>
+    <a href="https://github.com/Lucas6323"><img src="./assets/team/lucas-fabiano.jpg" width="110" alt="Lucas Fabiano"/><br/><b>Lucas Fabiano</b></a><br/><sub>Modelagem & Banco de Dados II</sub><br/> <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white"/></td>
+    <td align="center"><a href="https://github.com/gabPeotta"><img src="./assets/team/gabriel-peotta.jpeg" width="110" alt="Gabriel Peotta"/><br/><b>Gabriel Peotta</b></a><br/><sub>IA & Business Intelligence</sub><br/><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/> <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white"/></td>
+    <td align="center"><a href="https://github.com/EnzoHerrera"><img src="./assets/team/enzo-herrera.jpg" width="110" alt="Enzo Herrera"/><br/><b>Enzo Herrera</b></a><br/><sub>Desenvolvimento II & DevOps</sub><br/><img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white"/></td>
   </tr>
   <tr>
-    <td align="center"><a href="#"><img src="./assets/team/breno.jpeg" width="110" alt="Breno"/><br/><b>Breno</b></a><br/><sub>Aplicações Dinâmicas & UX</sub><br/><img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></td>
-    <td align="center"><a href="#"><img src="./assets/team/carlos-amaral.jpeg" width="110" alt="Carlos Amaral"/><br/><b>Carlos Amaral</b></a><br/><sub>Mobile</sub><br/><img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white"/> <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/></td>
-    <td align="center"><a href="#"><img src="./assets/team/davi-liu.jpeg" width="110" alt="Davi Liu"/><br/><b>Davi Liu</b></a><br/><sub>Eng. de Software & UX</sub><br/><img src="https://img.shields.io/badge/UML-0B3D2E?style=flat-square"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/><img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square &logo=redis&logoColor=white"></td>
+    <td align="center"><a href="https://github.com/Brenoz001"><img src="./assets/team/breno.jpeg" width="110" alt="Breno"/><br/><b>Breno</b></a><br/><sub>Aplicações Dinâmicas & UX</sub><br/><img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></td>
+    <td align="center"><a href="https://github.com/Carlos-droid-max"><img src="./assets/team/carlos-amaral.jpeg" width="110" alt="Carlos Amaral"/><br/><b>Carlos Amaral</b></a><br/><sub>Mobile</sub><br/><img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white"/> <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/></td>
+    <td align="center"><a href="https://github.com/Davi-O-Belo"><img src="./assets/team/davi-liu.jpeg" width="110" alt="Davi Liu"/><br/><b>Davi Liu</b></a><br/><sub>Eng. de Software & UX</sub><br/><img src="https://img.shields.io/badge/UML-0B3D2E?style=flat-square"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/><img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square &logo=redis&logoColor=white"></td>
   </tr>
 </table>
 
 ## 📦 Repositórios
-
-Todo o código vive na organização **[app-volta](https://github.com/app-volta)**:
 
 | | Repositório | O que contém |
 |:---:|---|---|
@@ -212,8 +222,6 @@ Todo o código vive na organização **[app-volta](https://github.com/app-volta)
 | 🐳 | [volta-devops](https://github.com/app-volta/volta-devops) | Infraestrutura, containers e deploy |
 | 📚 | [volta-docs](https://github.com/app-volta/volta-docs) | Documentação, diagramas e metodologia |
 | 🔧 | [.github](https://github.com/app-volta/.github) | Configurações padrão da organização |
-
-> Cada repositório é mantido pela frente correspondente da equipe.
 
 ---
 
