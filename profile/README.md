@@ -8,7 +8,7 @@
 
 <img src="./assets/volta.svg">
 
-### *"Tira uma foto. O VOLTA cuida do resto."*
+### *"Tudo que vai, VOLTA"*
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-2ED3A0?style=for-the-badge)
 ![Repos](https://img.shields.io/badge/repositórios-12-0B3D2E?style=for-the-badge&logo=github&logoColor=white)
@@ -83,33 +83,31 @@ Na prática, o VOLTA reduz o descarte inadequado, aumenta o volume de material r
 ```mermaid
 flowchart LR
     subgraph Ano1["1º Ano"]
-        direction TB
+
         L[Landing Page] --> AD[Área Admin]
         AD -->|CRUD| S[Servlet + JDBC + JSP]
         S --> DB1[(Banco 1º ano)]
     end
 
     subgraph Ano2["2º Ano"]
-        direction TB
+
         A[Mobile]
-        D[(PostgreSQL<br/> NeonDB)]
         B[API Principal<br/>Spring Boot]
         C[API Chatbot<br/>FastAPI]
-        I[API Mongo<br/>Interação Conversacional]
         R[API Redis<br/>Ranking Dinâmico]
-        M[(MongoDB <br/> Atlas)]
         W[Website do Gerente]
 
-        B --> D
+        D[(PostgreSQL<br/>Neon)]
+        M[(MongoDB<br/>Atlas)]
+
         A -->|CRUD| B
-        A -->|foto + dados| C
-        A -->|chat| I
-        R -->|ranking| A
-        B -->|score| R
-        I --> M
-        I --> W
+        B --> D
+
+        A -->|Foto + dados| C
         C --> M
 
+        B -->|Ocorrência + distância| R
+        R -->|Score| W
     end
 
     DB1 <-->|RPA| D
