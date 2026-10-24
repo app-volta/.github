@@ -211,8 +211,8 @@ flowchart LR
 | 📱 | [volta-mobile](https://github.com/app-volta/volta-mobile) | Aplicativo mobile (Android nativo) |
 | ⚙️ | [volta-api](https://github.com/app-volta/volta-api) | API principal do sistema (Spring Boot) |
 | 🏆 | [volta-api-redis](https://github.com/app-volta/volta-api-redis) | API para ranking dinâmico (Redis) |
-| 💬 | [volta-api-mongo](https://github.com/app-volta/volta-api-mongo) | API para interação conversacional (MongoDB, FastAPI) |
-| 🗄️ | [volta-database](https://github.com/app-volta/volta-database) | Modelagem e banco de dados relacional (SQL) |
+| 🗄️ | [volta-database](https://github.com/app-volta/volta-database) | Modelagem do banco de dados (SQL) e RPA (Python) |
+| 🛢️ | [volta-database-1ano](https://github.com/app-volta/volta-database-1ano) | Modelagem do banco de dados do 1° ano (SQL) |
 | 🤖 | [volta-chatbot](https://github.com/app-volta/volta-chatbot) | Módulo de Inteligência Artificial (FastAPI) |
 | 📊 | [volta-business-inteligence](https://github.com/app-volta/volta-business-inteligence) | Análises e dashboards de BI |
 | 🌐 | [volta-landing-page](https://github.com/app-volta/volta-landing-page) | Página/aplicação web do projeto |
