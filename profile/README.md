@@ -225,6 +225,13 @@ flowchart LR
 
 <div align="center">
 
+<br/>
+
+<img src="./assets/equipe.jpeg" alt="Foto da Equipe" width="500"/>
+
+<br/>
+<br/>
+
 <img src="./assets/mascote.png" alt="Mascote do VOLTA" width="70"/>
 
 **Quer entender a fundo?** Arquitetura, funcionalidades e regras de negócio estão em [volta-docs](https://github.com/app-volta/volta-docs).
