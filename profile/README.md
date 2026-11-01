@@ -131,12 +131,12 @@ flowchart LR
 ![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langgraph&logoColor=white)
 ![Qdrant](https://img.shields.io/badge/Qdrant-DC244C?style=for-the-badge&logo=qdrant&logoColor=white)
 
-
 **Ánalise de Dados** 
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
 ![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 
 **Bancos de dados**
 
@@ -181,10 +181,10 @@ flowchart LR
 
 <table align="center">
   <tr>
-    <td align="center"><a href="https://github.com/miguellapa25"><img src="./assets/team/miguel-lapa.png" width="110" alt="Miguel Lapa"/><br/><b>Miguel Lapa</b></a><br/><sub>Banco de Dados</sub><br/><img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/></td>
+    <td align="center"><a href="https://github.com/miguellapa25"><img src="./assets/team/miguel-lapa.png" width="110" alt="Miguel Lapa"/><br/><b>Miguel Lapa</b></a><br/><sub>BD1 e SOP</sub><br/><img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/><img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white"/></td>
     <td align="center"><a href="https://github.com/ldb2010"><img src="./assets/team/lucca.png" width="110" alt="Lucca"/><br/><b>Lucca</b></a><br/><sub>Desenvolvimento I</sub><br/><img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white"/></td>
-    <td align="center"><a href="https://github.com/Gustavo031210"><img src="./assets/team/gustavo-souza.png" width="110" alt="Gustavo Souza"/><br/><b>Gustavo Souza</b></a><br/><sub>Lógica, POO, SO e IA</sub><br/><img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Excel-217346?style=flat-square&logo=microsoftexcel&logoColor=white"/><img src="https://img.shields.io/badge/Gemini-8E75B2?style=flat-squared&logo=googlegemini&logoColor=white"></td>
-    <td align="center"><a href="https://github.com/GustavoA-byte"><img src="./assets/team/gustavo-azenha.png" width="110" alt="Gustavo Azenha"/><br/><b>Gustavo Azenha</b></a><br/><sub>Experiência do Usuário</sub><br/><img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></td>
+    <td align="center"><a href="https://github.com/Gustavo031210"><img src="./assets/team/gustavo-souza.png" width="110" alt="Gustavo Souza"/><br/><b>Gustavo Souza</b></a><br/><sub>Lógica, POO e IA</sub><br/><img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/> <img src="https://img.shields.io/badge/Gemini-8E75B2?style=flat-squared&logo=googlegemini&logoColor=white"></td>
+    <td align="center"><a href="https://github.com/GustavoA-byte"><img src="./assets/team/gustavo-azenha.png" width="110" alt="Gustavo Azenha"/><br/><b>Gustavo Azenha</b></a><br/><sub>UX</sub><br/><img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></td>
   </tr>
 </table>
 
@@ -193,14 +193,65 @@ flowchart LR
 <table align="center">
   <tr>
     <td align="center">
-    <a href="https://github.com/Lucas6323"><img src="./assets/team/lucas-fabiano.jpg" width="110" alt="Lucas Fabiano"/><br/><b>Lucas Fabiano</b></a><br/><sub>Modelagem & Banco de Dados II</sub><br/> <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/> <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/> <img src="https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white"/></td>
-    <td align="center"><a href="https://github.com/gabPeotta"><img src="./assets/team/gabriel-peotta.jpeg" width="110" alt="Gabriel Peotta"/><br/><b>Gabriel Peotta</b></a><br/><sub>IA & Business Intelligence</sub><br/><img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/> <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/> <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white"/></td>
-    <td align="center"><a href="https://github.com/EnzoHerrera"><img src="./assets/team/enzo-herrera.jpg" width="110" alt="Enzo Herrera"/><br/><b>Enzo Herrera</b></a><br/><sub>Desenvolvimento II & DevOps</sub><br/><img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=springboot&logoColor=white"/> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white"/></td>
+      <a href="https://github.com/Lucas6323">
+        <img src="./assets/team/lucas-fabiano.jpg" width="110" alt="Lucas Fabiano"/><br/>
+        <b>Lucas Fabiano</b>
+      </a><br/>
+      <sub>Modelagem & Banco de Dados II</sub><br/>
+      <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white"/>
+      <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Neo4j-4581C3?style=flat-square&logo=neo4j&logoColor=white"/>
+    </td>
+    <td align="center">
+      <a href="https://github.com/gabPeotta">
+        <img src="./assets/team/gabriel-peotta.jpeg" width="110" alt="Gabriel Peotta"/><br/>
+        <b>Gabriel Peotta</b>
+      </a><br/>
+      <sub>IA & Business Intelligence</sub><br/>
+      <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white"/>
+      <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white"/>
+    </td>
+    <td align="center">
+      <a href="https://github.com/EnzoHerrera">
+        <img src="./assets/team/enzo-herrera.jpg" width="110" alt="Enzo Herrera"/><br/>
+        <b>Enzo Herrera</b>
+      </a><br/>
+      <sub>Desenvolvimento II & DevOps</sub><br/>
+      <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=springboot&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white"/>
+      <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white"/>
+    </td>
   </tr>
   <tr>
-    <td align="center"><a href="https://github.com/Brenoz001"><img src="./assets/team/breno.jpeg" width="110" alt="Breno"/><br/><b>Breno</b></a><br/><sub>Aplicações Dinâmicas & UX</sub><br/><img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/></td>
-    <td align="center"><a href="https://github.com/Carlos-droid-max"><img src="./assets/team/carlos-amaral.jpeg" width="110" alt="Carlos Amaral"/><br/><b>Carlos Amaral</b></a><br/><sub>Mobile</sub><br/><img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white"/> <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/></td>
-    <td align="center"><a href="https://github.com/Davi-O-Belo"><img src="./assets/team/davi-liu.jpeg" width="110" alt="Davi Liu"/><br/><b>Davi Liu</b></a><br/><sub>Eng. de Software & UX</sub><br/><img src="https://img.shields.io/badge/UML-0B3D2E?style=flat-square"/> <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/><img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square &logo=redis&logoColor=white"></td>
+    <td align="center">
+      <a href="https://github.com/Brenoz001">
+        <img src="./assets/team/breno.jpeg" width="110" alt="Breno"/><br/>
+        <b>Breno</b>
+      </a><br/>
+      <sub>Aplicações Dinâmicas</sub><br/>
+      <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB"/>
+      <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white"/>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Carlos-droid-max">
+        <img src="./assets/team/carlos-amaral.jpeg" width="110" alt="Carlos Amaral"/><br/>
+        <b>Carlos Amaral</b>
+      </a><br/>
+      <sub>Mobile</sub><br/>
+      <img src="https://img.shields.io/badge/Android-3DDC84?style=flat-square&logo=android&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white"/>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Davi-O-Belo">
+        <img src="./assets/team/davi-liu.jpeg" width="110" alt="Davi Liu"/><br/>
+        <b>Davi Liu</b>
+      </a><br/>
+      <sub>Eng. de Software & UX</sub><br/>
+      <img src="https://img.shields.io/badge/UML-0B3D2E?style=flat-square"/>
+      <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white"/>
+      <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white"/>
+    </td>
   </tr>
 </table>
 
@@ -209,13 +260,14 @@ flowchart LR
 | | Repositório | O que contém |
 |:---:|---|---|
 | 📱 | [volta-mobile](https://github.com/app-volta/volta-mobile) | Aplicativo mobile (Android nativo) |
-| ⚙️ | [volta-api](https://github.com/app-volta/volta-api) | API principal do sistema (Spring Boot) |
+| ⚙️ | [volta-api-core](https://github.com/app-volta/volta-api-core) | API principal do sistema (Spring Boot) |
 | 🏆 | [volta-api-redis](https://github.com/app-volta/volta-api-redis) | API para ranking dinâmico (Redis) |
 | 🗄️ | [volta-database](https://github.com/app-volta/volta-database) | Modelagem do banco de dados (SQL) e RPA (Python) |
 | 🛢️ | [volta-database-1ano](https://github.com/app-volta/volta-database-1ano) | Modelagem do banco de dados do 1° ano (SQL) |
 | 🤖 | [volta-chatbot](https://github.com/app-volta/volta-chatbot) | Módulo de Inteligência Artificial (FastAPI) |
 | 📊 | [volta-business-inteligence](https://github.com/app-volta/volta-business-inteligence) | Análises e dashboards de BI |
-| 🌐 | [volta-landing-page](https://github.com/app-volta/volta-landing-page) | Página/aplicação web do projeto |
+| 🌐 | [volta-landing-page-static](https://github.com/app-volta/volta-landing-page-static) | Landing page estática (HTML e CSS) publicada no GitHub Pages |
+| 🧩 | [volta-landing-page-server](https://github.com/app-volta/volta-landing-page-server) | Landing page com área administrativa (JSP, Servlet e JDBC) |
 | 🖥️ | [volta-website-dad](https://github.com/app-volta/volta-website-dad) | Website para uso do gerente |
 | 🐳 | [volta-devops](https://github.com/app-volta/volta-devops) | Infraestrutura, containers e deploy |
 | 📚 | [volta-docs](https://github.com/app-volta/volta-docs) | Documentação, diagramas e metodologia |
